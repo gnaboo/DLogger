@@ -29,7 +29,7 @@ def getmessagesbefore(token, id, conversationid):
         raise Exception("Failed to get messages. A you sure you have a valid token?")
 
 def getmessagescount(token, userid, id): # TODO: implement this
-    "https://discord.com/api/v9/channels/885550779027562586/messages/search?author_id=718456289704804392&author_id=494552404747091969"
+    "https://discord.com/api/v9/channels/*/messages/search?author_id=*&author_id=*"
 
 def checktoken(token):
     try:

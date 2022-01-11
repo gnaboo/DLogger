@@ -31,6 +31,16 @@ def getmessagesbefore(token, id, conversationid):
 def getmessagescount(token, userid, id): # TODO: implement this
     "https://discord.com/api/v9/channels/885550779027562586/messages/search?author_id=718456289704804392&author_id=494552404747091969"
 
+def downloadimage(token, userid, useravatarid):
+    try:
+        """download image from url"""
+        url = f"https://cdn.discordapp.com/avatars/{userid}/{useravatarid}.png"
+        print(url)
+        with open(f"{userid}.png", "wb") as f:
+            f.write(urlopen(Request(url, headers=getheaders(token))).read())
+    except Exception as e:
+        raise Exception("Failed to get messages. A you sure you have a valid token / userid / avatar id ?")
+
 def checktoken(token):
     try:
         getuserdata(token)

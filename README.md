@@ -7,7 +7,7 @@
   <h3 align="center">DLogger</h3>
 
   <p align="center">
-    A simple app to log Discord Messages easily.
+    A simple project to log Discord Messages easily.
     <br>
     <a href="https://github.com/gnaboo/DLogger/issues/new?template=bug.md">Report bug</a>
     ·
@@ -31,27 +31,27 @@
 
 ## Quick start
 
-What can this app do ?
+What can this project do ?
 
-- This app allows you to easily log some conversations. 
+- This project allows you to easily log some conversations. 
 - It formats the data in a json file and in an HTML file, allowing people to easily view the log conversation
 - You can make your own extension in the ``own_script.py`` file.
 
 ## How it works
 
-How can I use this app ?
+How can I use this project ?
 
-- This app contains by default a ``interface.py`` file. This file contains a **Tkinter GUI** allowing any user to use this script.
+- This project contains by default a ``interface.py`` file. This file contains a **Tkinter GUI** allowing any user to use this script.
 
     - When opening it, you will be met with some entries and buttons
     - If you already know your token, you can use it. Otherwise, clicking the ``Extract token`` button. This will automatically gather your token from your computer. **(Safe, you can easily understand how is your token used by looking into the ``_token.py`` file)**
   
     - If more than one tokens are found, you will have to follow the instructions in the terminal.
-    - You then need to get the conversation ID. If you don't know how to get it, right click a message from a conversation and click on the button ``Copy the lick of the message``. Then paste it into the ``Message URL`` entry of this apps GUI.
+    - You then need to get the conversation ID. If you don't know how to get it, right click a message from a conversation and click on the button ``Copy the lick of the message``. Then paste it into the ``Message URL`` entry of this GUI.
     - To gather all the messages, click on the ``Parse All Messages``. Otherwise, enter the amount to messages in the entry and click the ``Parse Messages``.
     - Once done, it will automatically save it in the ``\ouput`` folder, with a json and html file. The html file will automatically open by default.
 
-- This app also contains a ``own_script.py`` file. This file contains some default code to custom the script.
+- This project also contains a ``own_script.py`` file. This file contains some default code to custom the script.
 
     - Documentation: **Work In Progress**
 

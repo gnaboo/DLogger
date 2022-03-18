@@ -1,5 +1,12 @@
 from _requests import getmessages, getmessagesbefore
 import math
+import random
+import time
+
+def generaterandomtiming():
+    rand = "".join(random.choice("0123456789") for i in range(4))
+    
+    return int(rand)/10000
 
 def parsemessages(token, conversationid, MESSAGESCOUNT=14061):
     messageslist = []
@@ -15,7 +22,7 @@ def parsemessages(token, conversationid, MESSAGESCOUNT=14061):
         try:
             print(f"[+] Parsing messages {i+1}/{requestscounter}...", end="\r")
             id = messages[-1]["id"]
-
+            time.sleep(generaterandomtiming())
             messages = getmessagesbefore(token, id, conversationid)
             messageslist.append(messages)
         except IndexError:
@@ -24,11 +31,26 @@ def parsemessages(token, conversationid, MESSAGESCOUNT=14061):
 
     return messageslist
 
-def askconversationid():
-    print("[+] Please enter the conversation ID:")
-    return input("Conversation ID: ")
+def parseallmessages(token, conversationid):
+    messageslist = []
 
-def askmessagecount():
-    print("[+] Please enter the number of messages to parse:")
-    return input("Number of messages to parse: ")
+    messages = getmessages(token, conversationid)
+    messageslist.append(messages)
+
+    print("[+] Parsing messages...")
+
+    while True:
+        try:
+            id = messages[-1]["id"]
+            time.sleep(generaterandomtiming())
+            messages = getmessagesbefore(token, id, conversationid)
+            messageslist.append(messages)
+        except IndexError:
+            print("[-] There are no more messages to parse.")
+            break
+
+    return messageslist
+
+def extractconversationid(messageurl):
+    return messageurl.split("/")[-2]
 

@@ -20,12 +20,14 @@ def getmessages(token, conversationid):
     try:
         return loads(urlopen(Request(f"https://discord.com/api/v9/channels/{conversationid}/messages?limit=50", headers=getheaders(token))).read().decode())
     except Exception as e:
+        print(e)
         raise Exception("Failed to get messages. A you sure you have a valid token?")
 
 def getmessagesbefore(token, id, conversationid):
     try:
         return loads(urlopen(Request(f"https://discord.com/api/v9/channels/{conversationid}/messages?before={id}&limit=50", headers=getheaders(token))).read().decode())
     except Exception as e:
+        print(e)
         raise Exception("Failed to get messages. A you sure you have a valid token?")
 
 def getmessagescount(token, userid, id): # TODO: implement this
@@ -40,6 +42,14 @@ def downloadimage(token, userid, useravatarid):
             f.write(urlopen(Request(url, headers=getheaders(token))).read())
     except Exception as e:
         raise Exception("Failed to get messages. A you sure you have a valid token / userid / avatar id ?")
+
+def download(url, filename, token):
+    try:
+        with open(filename, "wb") as f:
+            f.write(urlopen(Request(url, headers=getheaders(token))).read())
+    except Exception as e:
+        print(e)
+        raise Exception("Failed to download file. A you sure you have a valid token?")
 
 def checktoken(token):
     try:

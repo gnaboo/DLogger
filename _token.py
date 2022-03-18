@@ -60,4 +60,3 @@ def gettoken():
     else:
         token = tokens[0]
     return token
-

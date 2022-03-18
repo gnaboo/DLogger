@@ -5,6 +5,24 @@ __pycache__/
 requests.py
 test.html
 index.html
-messages.html
-messages.json
+/messages.html
+/messages.json
+output/
 style.css
+
+build/
+dist/
+
+interface.spec
+
+ibackup.py
+
+analyst.html
+_analyst.py
+config.json
+
+prototype.md
+
+logger.py
+release/
+release v2/

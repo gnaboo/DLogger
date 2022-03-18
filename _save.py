@@ -3,6 +3,7 @@ import json
 import codecs
 import datetime
 import re
+import os
 
 def get_time():
     return datetime.datetime.now().strftime("%d/%m%y %H:%M:%S")
@@ -16,6 +17,18 @@ def htmlheader():
     <title>DLogged Conversation</title>
         <style>
         /*Downloaded from https://www.codeseek.co/nicholasdrzewiecki/discord-responsive-recreation-owbzvz */
+
+    .downtext{
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    *{
+  scroll-behavior: smooth;
+    }
 
     .circle{
     min-width: 32px;
@@ -313,12 +326,15 @@ def htmlheader():
         </div>
 
         <div class="body">
+        <a href="#down">Descendre en bas</a>
         <div class="post">
             <div class="avatar"></div>
             <div class="text">""")
 
 def htmlfooter():
-    return """<div class="footer"></div>
+    return """
+    <div id="down"></div>
+    <div class="footer"></div>
     </div>
     <div class="flex-item"></div>
     </div>
@@ -327,17 +343,19 @@ def htmlfooter():
 
     </html>"""
 
-def htmlmessage(content, author, timestamp, modified, mentions, reference, attachements):
+def htmlmessage(content, author, timestamp, modified, mentions, reference, attachements, id):
     message = "<div class=\"post\">"
     message += f'<img class="circle" src="https://cdn.discordapp.com/avatars/{author["id"]}/{author["avatar"]}.png">'
     message += '<div class="text">'
     message += f'<div class="username">{author["username"]}</div>'
-    if reference != []: message += f'<div class="mention"><style="font-weight: bold;">@{reference["author"]["username"]}</style> {reference["content"]}</div>'
+    if reference != [] and reference != None:
+        message += f'<a class="mention" href="#{reference["id"]}"><style="font-weight: bold;">@{reference["author"]["username"]}</style> {reference["content"]}</a>'
+    
     if mentions != [] and reference == []: 
         message += f'<div class="mention">mention: {mentions[0]["username"]}</div>'
         content = re.sub(r'<[^>]*>', '', content)
     message += f'<div class="timestamp"> {timestamp}</div>'
-    message += f'<div class="message">{content}</div>'
+    message += f'<div class="message" id="{id}">{content}</div>'
     if modified.count(":") > 0: message += f'<div class="modified">(modifié) {modified}</div>'
     if attachements != []:
         for attachement in attachements:
@@ -353,9 +371,12 @@ def save_data_json(filename, data):
 def save_data_html(filename, data):
     finaldata = [htmlheader()]
     
-    data.reverse()
-    for _data in data:
-        _data.reverse()
+    try:
+        data.reverse()
+        for _data in data:
+            _data.reverse()
+    except:
+        pass
 
     for i, y in enumerate(data):
         for z in y:
@@ -370,7 +391,18 @@ def save_data_html(filename, data):
             except:
                 reference = []
             attachements = z["attachments"]
-            finaldata.append(htmlmessage(content, author, timestamp, modified, mentions, reference, attachements))
+            id = z["id"]
+            finaldata.append(htmlmessage(content, author, timestamp, modified, mentions, reference, attachements, id))
     finaldata.append(htmlfooter())
     with codecs.open(filename, "w", "utf-8-sig") as f:
         f.write('\n'.join(finaldata))
+
+def outputfolder():
+    try:
+        os.chdir("output")
+    except:
+        os.mkdir("output")
+        os.chdir("output")
+
+def openhtmlfile(filename):
+    os.system(f"start {filename}.html")

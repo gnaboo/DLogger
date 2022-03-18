@@ -47,7 +47,7 @@ How can I use this project ?
     - If you already know your token, you can use it. Otherwise, clicking the ``Extract token`` button. This will automatically gather your token from your computer. **(Safe, you can easily understand how is your token used by looking into the ``_token.py`` file)**
   
     - If more than one tokens are found, you will have to follow the instructions in the terminal.
-    - You then need to get the conversation ID. If you don't know how to get it, right click a message from a conversation and click on the button ``Copy the lick of the message``. Then paste it into the ``Message URL`` entry of this GUI.
+    - You then need to get the conversation ID. If you don't know how to get it, right click a message from a conversation and click on the button ``Copy the click of the message``. Then paste it into the ``Message URL`` entry of this GUI.
     - To gather all the messages, click on the ``Parse All Messages``. Otherwise, enter the amount to messages in the entry and click the ``Parse Messages``.
     - Once done, it will automatically save it in the ``\ouput`` folder, with a json and html file. The html file will automatically open by default.
 

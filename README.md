@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/gnaboo/DLogger">
-    <img src="https://github.com/gnaboo/DLogger/raw/main/Markdown/logo.png" alt="Logo" width=72 height=72>
+    <img src="https://github.com/gnaboo/DLogger/raw/main/markdown/logo.png" alt="Logo" width=72 height=72>
   </a>
 
   <h3 align="center">DLogger</h3>
@@ -18,7 +18,7 @@
 </p>
 
 
-<h1 align="center"><a href="https://github.com/gnaboo/DLogger/Markdown/ARCHIVE.md">Ce projet a été archivé. Veuillez consulter ARCHIVE.md </a></h1>
+<h1 align="center"><a href="https://github.com/gnaboo/DLogger/markdown/ARCHIVE.md">Ce projet a été archivé. Veuillez consulter ARCHIVE.md </a></h1>
 
 
 ## Table of contents

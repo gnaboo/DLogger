@@ -10,15 +10,11 @@
 
     THIS PROJECT HAS NOW BEEN ARCHIVED ; BECAUSE OF CHANGES IN DISCORD'S API, IT NO LONGER WORKS NOR WILL BE UPDATED.
     IT NOW SERVES AS A EXAMPLE OF FORMER PROJECTS I HAVE WORKED ON.
-    <br>
-    <a href="https://github.com/gnaboo/DLogger/issues/new?template=bug.md">Report bug</a>
-    ·
-    <a href="https://github.com/gnaboo/DLogger/issues/new?template=feature.md&labels=feature">Request feature</a>
   </p>
 </p>
 
 
-<h1 align="center"><a href="https://github.com/gnaboo/DLogger/Markdown/ARCHIVE.md">Ce projet a été archivé. Veuillez consulter ARCHIVE.md </a></h1>
+<h1 align="center"><a href="https://github.com/gnaboo/DLogger/blob/main/Markdown/ARCHIVE.md">Ce projet a été archivé. Veuillez consulter ARCHIVE.md </a></h1>
 
 
 ## Table of contents

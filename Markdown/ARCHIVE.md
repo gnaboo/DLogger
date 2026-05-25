@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/gnaboo/DLogger">
-    <img src="https://github.com/gnaboo/DLogger/raw/main/logo.png" alt="Logo" width=72 height=72>
+    <img src="https://github.com/gnaboo/DLogger/raw/main/markdown/logo.png" alt="Logo" width=72 height=72>
   </a>
 
   <h3 align="center">DLogger</h3>

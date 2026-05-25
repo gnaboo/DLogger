@@ -44,13 +44,11 @@ def Auth():
 def gettoken():
     tokens = Auth()
     tokens = list(tokens.keys())
-    print(f"[Found {len(tokens)} tokens]") if len(tokens) > 1 else print(f"[Found {len(tokens)} token]")
     for i, y in enumerate(tokens):
         censure = "*" * 10
         print(f"[{i+1}] {y[:20]}{censure}")
 
     if len(tokens) > 1:
-        print("[Enter the number of the token you want to use]")
         token = input("Token: ")
         if token.isdigit():
             token = tokens[int(token)-1]
